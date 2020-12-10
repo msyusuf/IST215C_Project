@@ -27,7 +27,7 @@ namespace IST215C_Project
         bool _saveSettings;
         int _customerCount;
 
-        public List<Customer> CustomerList;
+        public List<Customer> customerList;
 
 
         // public string _logFilename;
@@ -44,7 +44,8 @@ namespace IST215C_Project
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-          // can be used for loading default customer list.
+            SetDefaultVars();
+            // can be used for loading default customer list.
         } // frmMain_Loaded
 
         // updates the filtered list with results of new query
@@ -175,7 +176,7 @@ namespace IST215C_Project
 
         private void btnClearData_Click(object sender, RoutedEventArgs e)
         {
-            CustomerList.Clear();
+            customerList.Clear();
             dgDisplayAllCustomers.ItemsSource = null;
             dgDisplayAllCustomers.Items.Refresh();
             _customerCount = 0;
@@ -185,9 +186,9 @@ namespace IST215C_Project
         {
             if (File.Exists(fullFileName))
             {
-                _customerCount = Util.LoadData(Path.Combine(_dataDir, fullFileName), out CustomerList);
+                _customerCount = Util.LoadData(Path.Combine(_dataDir, fullFileName), out customerList);
                
-                dgDisplayAllCustomers.ItemsSource = CustomerList;
+                dgDisplayAllCustomers.ItemsSource = customerList;
                 dgDisplayAllCustomers.Items.Refresh();
             }
         }
@@ -230,6 +231,11 @@ namespace IST215C_Project
             {
                 System.Windows.MessageBox.Show($"Row_MouseDoubleClick {row.Item}.", Title, MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void mainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SaveUIValues();
         }
     } // class MainWindow
 } // end namespace 

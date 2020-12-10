@@ -45,7 +45,8 @@ namespace IST215C_Project
             }
         }
 
-        public int Age {
+        public int Age
+        {
             get => age;
             set
             {

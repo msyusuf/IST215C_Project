@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace IST215C_Project
 {
-    class DataArray
+    class DataController
     {
         private List<Customer> customerList;//reference to array
 
-        public DataArray(int maxSize, string inputPath)//constructor
+        public DataController(int maxSize, string inputPath)//constructor
         {
             // customerList = new List<Customer>();//create the array
             Util.LoadData(inputPath, out customerList);
@@ -31,52 +31,6 @@ namespace IST215C_Project
             customerList.Add(p);
             return;
         }
-
-        //public int LoadData()
-        //{
-        //    string sPath = @"..\..\";
-        //    //string sNewFile = "Customer10.txt";
-        //    string sNewFile = "Customer10.csv";
-        //    string line;
-        //    string[] words;
-        //    int count = 0;
-
-        //    StreamReader reader = new StreamReader(sPath + sNewFile);
-        //    try
-        //    {
-        //        do
-        //        {
-        //            count++;
-        //            line = reader.ReadLine();
-        //            words = line.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        //            customerList.Add(new Customer(Convert.ToInt32(words[0]),words[1], words[2], Convert.ToInt32(words[3]),words[4],words[5],words[6],words[7],words[8],words[9]));
-        //            // Console.WriteLine("{0,6} - {1}", count, line);
-        //        } while (reader.Peek() != -1);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine(e.Message);
-        //    }
-        //    finally
-        //    {
-        //        reader.Close();
-        //    }
-        //    //Console.WriteLine("Items read {0}", customerList.Count);
-        //    return customerList.Count;
-        //} // end loadData
-
-        //public void SaveData()
-        //{
-        //    string sPath = @"..\..\";
-        //    string sNewFile = "CustomerLab9_output.txt";
-
-        //    StreamWriter writer = new StreamWriter(sPath + sNewFile);
-        //    foreach (var person in customerList)
-        //    {
-        //        writer.WriteLine(person);
-        //    }
-        //    writer.Close();
-        //}
 
         public void UpdateCustomer(int pos, int id, string first, string last, int age, string street, string city, string state, string zip, string phone, string email)
         {

@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:IST215C_Project"
         mc:Ignorable="d" x:Name="mainWindow"
         Title="IST 215C Project" Height="600" Width="620"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded" Closing="mainWindow_Closing">
 
     <Window.CommandBindings>
         <!-- define command bindings -->
