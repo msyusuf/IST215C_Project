@@ -7,7 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IST215C_Project"
         mc:Ignorable="d" x:Name="mainWindow"
-        Title="IST 215C Project" Height="600" Width="620"
+        Title="IST 215C Project" Height="600" Width="740"
         Loaded="Window_Loaded" Closing="mainWindow_Closing">
 
     <Window.CommandBindings>
@@ -38,6 +38,9 @@
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="Margin" Value="5,5,5,5"/>
             <Setter Property="Padding" Value="2"/>
+            <Setter Property="MaxWidth" Value="120"/>
+            <Setter Property="MinWidth" Value="120"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -120,11 +123,11 @@
                           HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Center" FontWeight="Bold" Checked="chkSaveUIChanges_Checked"/>
                 </StackPanel>
             </GroupBox>
-            <Button x:Name="btnLoadData" Grid.Column="0" Grid.Row="2" Content="Load _Data" FontWeight="Bold" 
+            <Button x:Name="btnLoadData" Grid.Column="0" Grid.Row="2" Content="Load Data" FontWeight="Bold"
                     Style="{StaticResource ButtonStyle}" ToolTip="Load Receive Frequencies" Margin="10" Click="btnLoadData_Click" />
 
-            <Button x:Name="btnClearData" Grid.Column="1" Grid.Row="2" Content="Clear _Data" FontWeight="Bold" 
-                    Style="{StaticResource ButtonStyle}" ToolTip="Clear Receive Frequencies" Margin="10" Click="btnClearData_Click" />
+            <Button x:Name="btnClearData" Grid.Column="0" Grid.Row="2" Content="Clear Data" FontWeight="Bold" Margin="150,10,0,10"
+                    Style="{StaticResource ButtonStyle}" ToolTip="Clear Receive Frequencies" Click="btnClearData_Click" />
 
             <GroupBox Header="Customers" Grid.Row="3" Grid.Column="0" Margin="5,0,10,0">
                 <DataGrid x:Name="dgDisplayAllCustomers" Grid.Column="0" Style="{StaticResource DataGridStyle}" MouseDoubleClick="Row_MouseDoubleClick" />

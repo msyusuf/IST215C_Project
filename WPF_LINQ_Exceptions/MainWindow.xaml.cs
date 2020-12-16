@@ -39,7 +39,7 @@ namespace IST215C_Project
         public MainWindow()
         {
             InitializeComponent();
-            
+            GetDefaultValuesforUI();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
